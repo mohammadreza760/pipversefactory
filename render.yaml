@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: forex-telegram-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python forex_bot.py
+    autoDeploy: true
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        value: 9085034519:AAFG7C4JauBsnzI1XB0jpJTLjKKS0ImNTSs
+      - key: TELEGRAM_CHANNEL_ID
+        value: "@pipversefactory"
+      - key: PORT
+        value: 10000
